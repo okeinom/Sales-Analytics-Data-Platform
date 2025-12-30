@@ -131,38 +131,3 @@ Slowly Changing Dimensions (Type 2)
 Batch pipeline design
 
 Project structuring and documentation
-
-yaml
-Copy code
-
----
-
-## ✅ Why this will instantly look “professional”
-
-- `#` → large title
-- `##` → section headers
-- `---` → horizontal separators
-- Lists → clean spacing
-- Code blocks → monospace + background
-- Consistent structure → recruiter-friendly
-
-This is exactly how **real DE repos** look.
-
----
-
-## 🧪 How to preview before pushing
-In VS Code:
-- Open `README.md`
-- Right-click → **Open Preview**
-
-You’ll see exactly how GitHub will render it.
-
----
-
-## 🔥 Final step
-After pasting and saving:
-
-```bash
-git add README.md
-git commit -m "Improve README formatting and documentation"
-git push
