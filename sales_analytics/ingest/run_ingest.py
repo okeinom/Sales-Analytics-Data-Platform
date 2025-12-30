@@ -15,11 +15,11 @@ def run():
     # Stage each dataset
     staged_data = {}
     if "customers.csv" in raw_data:
-        staged_data["customers"] = stage_customers(raw_data["customers.csv"])
+        staged_data["customers"] = stage_customers(raw_data["customers"])
     if "customers_updates.csv" in raw_data:
-        staged_data["customers_updates"] = stage_customer_updates(raw_data["customers_updates.csv"])
+        staged_data["customers_updates"] = stage_customer_updates(raw_data["customers_updates"])
     if "sales.csv" in raw_data:
-        staged_data["sales"] = stage_sales(raw_data["sales.csv"])
+        staged_data["sales"] = stage_sales(raw_data["sales"])
 
     return staged_data
 

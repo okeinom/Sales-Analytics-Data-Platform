@@ -24,7 +24,7 @@ def load_all_raw_data() -> dict[str, pd.DataFrame]:
     """
     data_frames = {}
     for file_path in RAW_DATA_DIR.glob("*.csv"):
-        data_frames[file_path.name] = pd.read_csv(file_path)
+        data_frames[file_path.stem] = pd.read_csv(file_path)
     return data_frames
 
 if __name__ == "__main__":
