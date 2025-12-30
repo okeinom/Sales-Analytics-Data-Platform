@@ -92,7 +92,13 @@ Sales-Analytics-Data-Platform/
 └── .env.example
 
 ---
+## Processing Mode
+This pipeline operates in batch mode, processing snapshot-based retail data on a scheduled run. The design prioritizes correctness, rerunnability, and historical accuracy over low-latency processing.
 
+## Database Persistence
+Analytics tables are materialized into a PostgreSQL database using SQLAlchemy.
+Only analytics-layer tables are persisted; raw and staging layers remain transient
+to ensure modularity and rerunnability.
 ## How to Run
 
 ### 1. Create and activate a virtual environment
@@ -126,3 +132,4 @@ Slowly Changing Dimensions (Type 2)
 Batch pipeline design
 
 Project structuring and documentation
+
