@@ -13,8 +13,6 @@ The platform is designed to reflect real-world data engineering patterns, includ
 
 Source → Raw → Staging → Analytics
 
-yaml
-Copy code
 
 ### Source
 - CSV files representing retail entities:
@@ -92,9 +90,6 @@ Sales-Analytics-Data-Platform/
 ├── README.md
 ├── requirements.txt
 └── .env.example
-
-yaml
-Copy code
 
 ---
 
