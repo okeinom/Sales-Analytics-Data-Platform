@@ -10,10 +10,7 @@ The platform is designed to reflect real-world data engineering patterns, includ
 ---
 
 ## Data Pipeline Flow
-
 Source → Raw → Staging → Analytics
-
-
 ### Source
 - CSV files representing retail entities:
   - customers
@@ -80,56 +77,70 @@ Sales-Analytics-Data-Platform/
 │ └── raw/
 ├── scripts/
 │ └── generate_data.py
-├── src/
+├── sales_analytics/
 │ ├── ingest/
 │ ├── transform/
 │ └── load/
 ├── sql/
+│ └── dim_customer_scd.sql
 ├── airflow/
 │ └── dags/
+│ └── sales_analytics_pipeline_dag.py
 ├── README.md
 ├── requirements.txt
 └── .env.example
 
+
 ---
+
 ## Processing Mode
-This pipeline operates in batch mode, processing snapshot-based retail data on a scheduled run. The design prioritizes correctness, rerunnability, and historical accuracy over low-latency processing.
+This pipeline operates in **batch mode**, processing snapshot-based retail data on a scheduled run.
+
+The design prioritizes **correctness, rerunnability, and historical accuracy** over low-latency processing.
+
+---
 
 ## Database Persistence
-Analytics tables are materialized into a PostgreSQL database using SQLAlchemy.
-Only analytics-layer tables are persisted; raw and staging layers remain transient
-to ensure modularity and rerunnability.
+Analytics tables are materialized into a **PostgreSQL** database using SQLAlchemy.
+
+Only analytics-layer tables are persisted; raw and staging layers remain transient to ensure modularity and rerunnability.
+
+---
+
+## Orchestration
+A stub **Apache Airflow DAG** is included to demonstrate how the batch pipeline would be orchestrated in a production environment.
+
+The DAG triggers the existing Python-based pipeline without duplicating transformation logic, reinforcing Airflow’s role as an orchestrator rather than a processing engine.
+
+---
+
 ## How to Run
 
 ### 1. Create and activate a virtual environment
 ```bash
 python -m venv .venv
 source .venv/Scripts/activate
+
 2. Install dependencies
-bash
-Copy code
-pip install -r requirements.txt
+   pip install -r requirements.txt
 3. Generate synthetic source data
-bash
-Copy code
-python scripts/generate_data.py
+   python scripts/generate_data.py
+
 CSV files will be created in data/raw/.
 
 Notes
+
 The dataset is synthetic by design to allow controlled simulation of customer changes for SCD Type 2.
 
 The focus of this project is data engineering architecture and transformation logic, not visualization.
 
 Skills Demonstrated
-Python-based data ingestion and transformation
 
-SQL-based analytical modeling
-
-Dimensional modeling (fact and dimension tables)
-
-Slowly Changing Dimensions (Type 2)
-
-Batch pipeline design
-
-Project structuring and documentation
-
+- Python-based data ingestion and transformation
+- SQL-based analytical modeling
+- Dimensional modeling (fact and dimension tables)
+- Slowly Changing Dimensions (Type 2)
+- Batch pipeline design
+- Database persistence (PostgreSQL)
+- Orchestration awareness (Airflow)
+- Project structuring and documentation
