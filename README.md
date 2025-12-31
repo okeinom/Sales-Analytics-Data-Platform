@@ -127,14 +127,14 @@ source .venv/Scripts/activate
    python scripts/generate_data.py
 
 CSV files will be created in data/raw/.
-
-Notes
+```
+## Notes
 
 The dataset is synthetic by design to allow controlled simulation of customer changes for SCD Type 2.
 
 The focus of this project is data engineering architecture and transformation logic, not visualization.
 
-Skills Demonstrated
+## Skills Demonstrated
 
 - Python-based data ingestion and transformation
 - SQL-based analytical modeling
