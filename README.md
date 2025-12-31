@@ -113,6 +113,8 @@ A stub **Apache Airflow DAG** is included to demonstrate how the batch pipeline 
 The DAG triggers the existing Python-based pipeline without duplicating transformation logic, reinforcing Airflow’s role as an orchestrator rather than a processing engine.
 
 ---
+## Testing and Observability
+The pipeline includes lightweight unit tests for critical transformation logic (SCD Type 2) and structured logging to support observability, debugging, and rerunnable batch execution.
 
 ## How to Run
 
@@ -127,14 +129,14 @@ source .venv/Scripts/activate
    python scripts/generate_data.py
 
 CSV files will be created in data/raw/.
-
-Notes
+```
+## Notes
 
 The dataset is synthetic by design to allow controlled simulation of customer changes for SCD Type 2.
 
 The focus of this project is data engineering architecture and transformation logic, not visualization.
 
-Skills Demonstrated
+## Skills Demonstrated
 
 - Python-based data ingestion and transformation
 - SQL-based analytical modeling
