@@ -1,7 +1,9 @@
 from pathlib import Path
+from sales_analytics.utils.logging import get_logger
 import pandas as pd
 
 RAW_DATA_DIR = Path("data/raw")
+logger = get_logger(__name__)
 
 def load_raw_data(file_name: str) -> pd.DataFrame:
     """
@@ -28,7 +30,7 @@ def load_all_raw_data() -> dict[str, pd.DataFrame]:
     return data_frames
 
 if __name__ == "__main__":
-   
+    logger.info("Loading all raw data files...")
     all_data = load_all_raw_data()
     for file_name, df in all_data.items():
         print(f"Data from {file_name}:")

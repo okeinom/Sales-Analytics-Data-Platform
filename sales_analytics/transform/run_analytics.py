@@ -6,7 +6,9 @@ from sales_analytics.transform.staging import (
 )
 from sales_analytics.transform.dim_customer import build_dim_customer
 from sales_analytics.transform.fact_sales import build_fact_sales
+from sales_analytics.utils.logging import get_logger
 
+logger = get_logger(__name__)
 
 def run():
     raw = load_all_raw_data()
@@ -23,4 +25,5 @@ def run():
 
 
 if __name__ == "__main__":
+    logger.info("Running sales analytics transformations...")
     run()
