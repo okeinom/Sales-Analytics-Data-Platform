@@ -11,6 +11,10 @@ The platform is designed to reflect real-world data engineering patterns, includ
 
 ## Data Pipeline Flow
 Source → Raw → Staging → Analytics
+## Architecture
+
+<img src="docs/images/architecture.png" alt="Sales Analytics Data Platform Architecture" width="900" />
+
 ### Source
 - CSV files representing retail entities:
   - customers
