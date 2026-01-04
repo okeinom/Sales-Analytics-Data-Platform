@@ -126,14 +126,18 @@ The pipeline includes lightweight unit tests for critical transformation logic (
 ```bash
 python -m venv .venv
 source .venv/Scripts/activate
-
-2. Install dependencies
-   pip install -r requirements.txt
-3. Generate synthetic source data
-   python scripts/generate_data.py
-
-CSV files will be created in data/raw/.
 ```
+
+### 2. Install dependencies
+```bash
+   pip install -r requirements.txt
+```
+### 3. Generate synthetic source data
+```bash
+   python scripts/generate_data.py
+```
+CSV files will be created in data/raw/.
+
 ## Notes
 
 The dataset is synthetic by design to allow controlled simulation of customer changes for SCD Type 2.
